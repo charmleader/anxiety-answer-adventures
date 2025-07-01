@@ -1,11 +1,76 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
+import { Users, GraduationCap } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Index = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-gradient-background flex items-center justify-center p-4">
+      <div className="max-w-4xl w-full">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
+            불안감 해소 카드 게임
+          </h1>
+          <p className="text-lg md:text-xl text-muted-foreground mb-8">
+            시험 불안감을 해소하는 4명의 선생님들의 조언을 들어보세요
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+          {/* 학생용 */}
+          <Card 
+            className="p-8 text-center bg-gradient-card shadow-card hover:shadow-floating transition-all duration-300 cursor-pointer hover-lift"
+            onClick={() => navigate('/student')}
+          >
+            <div className="w-20 h-20 mx-auto mb-6 bg-primary rounded-full flex items-center justify-center">
+              <Users className="w-10 h-10 text-primary-foreground" />
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+              학생용
+            </h2>
+            <p className="text-muted-foreground mb-6">
+              카드를 뒤집어서 선생님들의 조언을 들어보고 가장 도움이 될 것 같은 조언을 선택해주세요.
+            </p>
+            <Button 
+              size="lg" 
+              className="w-full bg-gradient-primary text-white"
+            >
+              게임 시작하기
+            </Button>
+          </Card>
+
+          {/* 교사용 */}
+          <Card 
+            className="p-8 text-center bg-gradient-card shadow-card hover:shadow-floating transition-all duration-300 cursor-pointer hover-lift"
+            onClick={() => navigate('/teacher')}
+          >
+            <div className="w-20 h-20 mx-auto mb-6 bg-accent rounded-full flex items-center justify-center">
+              <GraduationCap className="w-10 h-10 text-accent-foreground" />
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+              교사용
+            </h2>
+            <p className="text-muted-foreground mb-6">
+              학생들이 어떤 조언을 선택했는지 실시간으로 확인하고 결과를 분석할 수 있습니다.
+            </p>
+            <Button 
+              size="lg" 
+              variant="secondary"
+              className="w-full"
+            >
+              결과 확인하기
+            </Button>
+          </Card>
+        </div>
+
+        <div className="text-center mt-12">
+          <p className="text-sm text-muted-foreground">
+            시험 스트레스 관리를 위한 교육용 게임입니다
+          </p>
+        </div>
       </div>
     </div>
   );

@@ -2,41 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* 불안감 해소 카드 게임 디자인 시스템 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* 기본 배경과 텍스트 */
+    --background: 210 100% 97%;
+    --foreground: 230 25% 18%;
 
+    /* 카드 디자인 */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 230 25% 18%;
+    --card-shadow: 0 10px 30px -5px hsla(220, 40%, 20%, 0.15);
 
+    /* 팝오버 */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 230 25% 18%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* 주요 색상 - 따뜻한 교육적 블루 */
+    --primary: 215 85% 65%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 215 100% 75%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* 보조 색상 - 부드러운 라벤더 */
+    --secondary: 260 60% 92%;
+    --secondary-foreground: 230 25% 18%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* 음소거된 색상 */
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 8.9% 46.1%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* 강조 색상 - 따뜻한 핑크 */
+    --accent: 330 70% 88%;
+    --accent-foreground: 230 25% 18%;
 
+    /* 장소별 테마 색상 */
+    --health-room: 350 100% 85%;      /* 부드러운 핑크 */
+    --counseling-room: 45 100% 85%;   /* 따뜻한 노란색 */
+    --library: 135 60% 80%;           /* 차분한 그린 */
+    --cafeteria: 25 100% 80%;         /* 활기찬 오렌지 */
+
+    /* 위험 색상 */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* 테두리와 입력 */
+    --border: 220 20% 90%;
+    --input: 220 20% 90%;
+    --ring: 215 85% 65%;
 
-    --radius: 0.5rem;
+    /* 그라디언트 */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 14% 98%));
+    --gradient-background: linear-gradient(180deg, hsl(var(--background)), hsl(220 100% 99%));
+
+    /* 그림자 */
+    --shadow-gentle: 0 4px 15px -3px hsla(220, 40%, 20%, 0.08);
+    --shadow-card: 0 8px 25px -5px hsla(220, 40%, 20%, 0.12);
+    --shadow-floating: 0 15px 35px -5px hsla(220, 40%, 20%, 0.15);
+
+    /* 애니메이션 */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +130,34 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* 3D 카드 뒤집기 애니메이션 */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .transform-style-preserve-3d {
+    transform-style: preserve-3d;
+  }
+  
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+  
+  /* 부드러운 호버 효과 */
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -10px hsla(220, 40%, 20%, 0.2);
   }
 }
