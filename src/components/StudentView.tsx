@@ -14,7 +14,7 @@ const homeroomTeacher = {
   id: 'homeroom',
   name: '교실',
   teacher: '담임 선생님',
-  advice: '공부를 제대로 안하니까 불안한거야. 그시간에 공부를 하자! 정면돌파!',
+  advice: '공부를 제대로 안하니까 불안한거야. 그시간에 공부를 하자! 정면돌파! 화이팅!',
   description: '따뜻한 격려와 응원',
   image: '/lovable-uploads/d36a05a1-d0bc-490e-a102-02d187685aca.png',
   color: 'homeroom',
@@ -25,7 +25,7 @@ const otherTeachers = [
     id: 'health_room',
     name: '보건실',
     teacher: '보건 선생님',
-    advice: '심호흡을 크게 하고, 두 손으로 나를 토닥여 주자~ 다독다독~ 누구보다 네가 스스로를 응원해 준다면, 너의 뇌는 너의 불안을 희망으로 변화 시킬거고, 결국 너는 해 낼 수 있을거야!',
+    advice: '시험에 대한 불안은 누구에게나 있을 수 있어. 심호흡을 크게 하고, 두 손으로 나를 토닥여 주자~ 다독다독~ 누구보다 네가 스스로를 응원해 준다면, 너의 뇌는 너의 불안을 희망으로 변화 시킬거고, 결국 너는 해 낼 수 있을거야!',
     description: '몸과 마음을 편안하게',
     image: '/lovable-uploads/818b62b1-0a53-4d0f-be83-2fae413e0b96.png',
     color: 'health-room',
@@ -119,7 +119,7 @@ export function StudentView() {
     <div className="max-w-2xl mx-auto">
       <div className="text-center mb-8">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-4 leading-tight">
-          선생님, 시험을 보는데<br />불안해요. 어떻게 해야할까요?
+          선생님, 시험을 보는데<br />불안해요.<br></br> 어떻게 해야할까요?
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground mb-6">
           먼저 담임선생님께 물어보세요. 카드를 클릭해서 조언을 들어보세요!
@@ -163,11 +163,11 @@ export function StudentView() {
               size="lg"
               className="bg-gradient-primary text-white text-lg px-8 py-4 shadow-floating hover:shadow-card transition-all duration-300 mr-4"
             >
-              선생님 감사합니다. 위로가 되었어요.
+              선생님 감사합니다. 도움이 되었어요.
             </Button>
             <div className="mt-6">
               <p className="text-lg text-muted-foreground mb-4">
-                또다른 해결방법이 궁금한가요?
+                또 다른 해결방법이 궁금한가요?
               </p>
               <Button
                 onClick={handleNeedMoreHelp}
@@ -175,7 +175,7 @@ export function StudentView() {
                 size="lg"
                 className="text-lg px-8 py-4"
               >
-                4가지 추가 해결방안 보기
+                추가 해결방안
               </Button>
             </div>
           </div>
@@ -191,7 +191,7 @@ export function StudentView() {
           다른 선생님들의 조언도<br />들어보세요!
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground mb-6">
-          4명의 선생님께서 각각 다른 조언을 주실 거예요. 카드를 클릭해서 조언을 들어보세요!
+          카드를 클릭해서 각각의 선생님의 조언도 들어보세요!
         </p>
       </div>
 
