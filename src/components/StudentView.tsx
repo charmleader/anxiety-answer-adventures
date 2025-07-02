@@ -119,7 +119,9 @@ export function StudentView() {
     <div className="max-w-2xl mx-auto">
       <div className="text-center mb-8">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-4 leading-tight">
-          선생님, 시험을 보는데<br />불안해요.<br></br> 어떻게 해야할까요?
+          선생님!<br />
+          <span className="text-base opacity-80">시험을 보는데 불안해요.</span><br />
+          어떻게 해야할까요?
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground mb-6">
           먼저 담임선생님께 물어보세요. 카드를 클릭해서 조언을 들어보세요!
