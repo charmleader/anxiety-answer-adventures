@@ -2,6 +2,7 @@ import { useVotes } from '@/hooks/useVotes';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
+import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from 'recharts';
 
 const locations = [
   {
@@ -16,15 +17,15 @@ const locations = [
     id: 'counseling_room',
     name: '상담실',
     teacher: '상담 선생님',
-    advice: '불안한 마음을 나누어 보세요. 충분히 준비했다면 자신을 믿어보세요.',
+    advice: '시험보기전에 마음이 두근거리거나 나는 또 못할거야, 스탑! 신호를 만들자. 예를 들어 마음속으로 "멈춰!"라고 말하는거야. 그리고 나는 준비한 만큼 해볼거야.',
     image: '/lovable-uploads/f654e1fe-1cc7-4541-8d17-cf4299d39fc0.png',
     color: 'counseling-room',
   },
   {
     id: 'library',
-    name: '도서관',
-    teacher: '사서 선생님',
-    advice: '차분히 정리하며 복습해보세요. 아는 것부터 천천히 확인해 나가세요.',
+    name: '교실',
+    teacher: '담임 선생님',
+    advice: '공부를 제대로 안하니까 불안한거야. 그시간에 공부를 하자! 정면돌파!',
     image: '/lovable-uploads/190579a4-33ad-40e6-93ca-511720b44c60.png',
     color: 'library',
   },
@@ -32,7 +33,7 @@ const locations = [
     id: 'cafeteria',
     name: '급식실',
     teacher: '영양 선생님',
-    advice: '영양가 있는 음식을 먹고 충분히 쉬세요. 컨디션 관리가 가장 중요해요.',
+    advice: '바나나 한 입, 아몬드 5개! 시험 전 불안감을 없앨 수 있는 마법 간식이야. 먹으면 마음이 차분해지고 머리가 반짝해질거야!',
     image: '/lovable-uploads/07388efb-3770-4315-866e-545bf1fa4ad7.png',
     color: 'cafeteria',
   },
@@ -44,6 +45,14 @@ export function TeacherView() {
   const getPercentage = (count: number) => {
     return totalVotes > 0 ? (count / totalVotes) * 100 : 0;
   };
+
+  const pieData = locations.map((location) => ({
+    name: location.name,
+    value: voteCounts[location.id as keyof typeof voteCounts],
+    teacher: location.teacher,
+  }));
+
+  const COLORS = ['#8884d8', '#82ca9d', '#ffc658', '#ff7c7c'];
 
   return (
     <div className="min-h-screen bg-gradient-background p-4">
@@ -60,6 +69,41 @@ export function TeacherView() {
             총 참여 학생: {totalVotes}명
           </Badge>
         </div>
+
+        {/* 원그래프 중앙 표시 */}
+        {totalVotes > 0 && (
+          <div className="mb-12">
+            <Card className="p-8 bg-white shadow-card">
+              <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
+                투표 결과 분포
+              </h3>
+              <div className="h-96">
+                <ResponsiveContainer width="100%" height="100%">
+                  <PieChart>
+                    <Pie
+                      data={pieData}
+                      cx="50%"
+                      cy="50%"
+                      labelLine={false}
+                      label={({ name, value, percent }) => 
+                        `${name}: ${value}명 (${(percent * 100).toFixed(1)}%)`
+                      }
+                      outerRadius={120}
+                      fill="#8884d8"
+                      dataKey="value"
+                    >
+                      {pieData.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                      ))}
+                    </Pie>
+                    <Tooltip formatter={(value, name) => [`${value}명`, name]} />
+                    <Legend />
+                  </PieChart>
+                </ResponsiveContainer>
+              </div>
+            </Card>
+          </div>
+        )}
 
         {/* 통계 카드들 */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

@@ -19,7 +19,7 @@ interface TeacherCardProps {
 export function TeacherCard({ location, isFlipped, onFlip, voteCount }: TeacherCardProps) {
   const frontContent = (
     <div className="flex flex-col items-center justify-center h-full p-6 text-center">
-      <div className="w-24 h-24 md:w-32 md:h-32 mb-4 rounded-full overflow-hidden shadow-gentle">
+      <div className="w-48 h-48 md:w-64 md:h-64 mb-4 rounded-full overflow-hidden shadow-gentle">
         <img 
           src={location.image} 
           alt={location.teacher}
@@ -51,7 +51,7 @@ export function TeacherCard({ location, isFlipped, onFlip, voteCount }: TeacherC
           <p className="text-base md:text-lg leading-relaxed text-foreground mb-4">
             "{location.advice}"
           </p>
-          <div className="w-16 h-16 md:w-20 md:h-20 mx-auto rounded-full overflow-hidden shadow-gentle">
+          <div className="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden shadow-gentle">
             <img 
               src={location.image} 
               alt={location.teacher}
@@ -70,7 +70,7 @@ export function TeacherCard({ location, isFlipped, onFlip, voteCount }: TeacherC
       isFlipped={isFlipped}
       onFlip={onFlip}
       locationColor={location.color}
-      className="h-80 md:h-96"
+      className="h-96 md:h-[28rem]"
     />
   );
 }
