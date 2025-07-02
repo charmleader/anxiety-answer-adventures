@@ -246,6 +246,11 @@ export function StudentView() {
         {step === 'others' && renderOthersStep()}
         {step === 'voted' && renderVotedStep()}
       </div>
+      
+      {/* Creator credit */}
+      <div className="fixed bottom-4 right-4 text-sm text-muted-foreground/70 z-10">
+        참리더
+      </div>
     </div>
   );
 }
