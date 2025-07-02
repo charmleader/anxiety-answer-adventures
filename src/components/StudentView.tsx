@@ -14,7 +14,9 @@ const homeroomTeacher = {
   id: 'homeroom',
   name: '교실',
   teacher: '담임 선생님',
-  advice: `공부를 제대로 안하니까 불안한거야. \n그시간에 공부를 하자! \n정면돌파! 화이팅!`,
+  advice: `공부를 제대로 안하니까 불안한거야.
+그 시간에 공부를 하자!
+정면돌파! 화이팅!`,
   description: '따뜻한 격려와 응원',
   image: '/lovable-uploads/d36a05a1-d0bc-490e-a102-02d187685aca.png',
   color: 'homeroom',

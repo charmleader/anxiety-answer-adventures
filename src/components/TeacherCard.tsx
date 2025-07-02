@@ -39,7 +39,13 @@ export function TeacherCard({ location, isFlipped, onFlip, voteCount }: TeacherC
     <div className="flex flex-col h-full p-6">
       <div className="flex items-center justify-between mb-4">
         <h4 className="text-lg md:text-xl font-bold text-foreground">
-          {location.teacher}
+          {location.teacher.includes('(참00 선생님)') ? (
+            <>
+              담임 선생님 <span className="text-muted-foreground/60 font-normal">(참00 선생님)</span>
+            </>
+          ) : (
+            location.teacher
+          )}
         </h4>
         <Badge variant="secondary" className="text-sm">
           {voteCount}명 선택
