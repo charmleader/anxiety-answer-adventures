@@ -139,15 +139,15 @@ export function StudentView() {
 
       {isHomeroomFlipped && (
         <div className="text-center space-y-4">
-          <div className="flex justify-center mb-4">
+          <div className="flex justify-center mb-6">
             <Button
               onClick={toggleAudio}
-              variant="outline"
+              variant="secondary"
               size="lg"
-              className="flex items-center gap-2"
+              className="flex items-center gap-3 px-6 py-4 text-lg font-medium bg-gradient-card shadow-card hover:shadow-floating transition-all duration-300"
             >
-              {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
-              <Volume2 className="w-5 h-5" />
+              {isPlaying ? <Pause className="w-6 h-6" /> : <Play className="w-6 h-6" />}
+              <Volume2 className="w-6 h-6" />
               음성으로 듣기
             </Button>
             <audio
@@ -167,18 +167,25 @@ export function StudentView() {
             >
               선생님 감사합니다. 도움이 되었어요.
             </Button>
-            <div className="mt-6">
-              <p className="text-lg text-muted-foreground mb-4">
-                또 다른 해결방법이 궁금한가요?
-              </p>
-              <Button
-                onClick={handleNeedMoreHelp}
-                variant="outline"
-                size="lg"
-                className="text-lg px-8 py-6"
-              >
-                추가 해결방안
-              </Button>
+            <div className="mt-8 p-6 bg-gradient-card rounded-lg shadow-card border border-border">
+              <div className="text-center mb-6">
+                <p className="text-xl font-semibold text-foreground mb-2">
+                  또 다른 해결방법이 궁금한가요?
+                </p>
+                <p className="text-base text-muted-foreground">
+                  다른 선생님들의 특별한 조언도 들어보세요!
+                </p>
+              </div>
+              <div className="flex justify-center">
+                <Button
+                  onClick={handleNeedMoreHelp}
+                  variant="outline"
+                  size="lg"
+                  className="text-lg px-8 py-4 font-medium bg-background/50 border-2 border-primary/30 hover:bg-primary/5 hover:border-primary/50 transition-all duration-300"
+                >
+                  추가 해결방안 보기
+                </Button>
+              </div>
             </div>
           </div>
         </div>
