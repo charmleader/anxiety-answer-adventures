@@ -15,7 +15,7 @@ const Index = () => {
             아이(AI)마음 휴게소
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8">
-            시험 불안감을 해소하는 4명의 선생님들의 조언을 들어보세요
+            시험 불안감을 해소할 수 있도록 선생님들의 조언을 들어보세요
           </p>
         </div>
 
