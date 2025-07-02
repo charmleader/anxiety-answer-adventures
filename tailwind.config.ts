@@ -56,7 +56,8 @@ export default {
 				'health-room': 'hsl(var(--health-room))',
 				'counseling-room': 'hsl(var(--counseling-room))',
 				'library': 'hsl(var(--library))',
-				'cafeteria': 'hsl(var(--cafeteria))',
+        'cafeteria': 'hsl(var(--cafeteria))',
+        'homeroom': 'hsl(var(--homeroom))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',

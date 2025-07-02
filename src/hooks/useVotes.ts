@@ -6,6 +6,7 @@ interface VoteCount {
   counseling_room: number;
   library: number;
   cafeteria: number;
+  homeroom: number;
 }
 
 export function useVotes() {
@@ -14,6 +15,7 @@ export function useVotes() {
     counseling_room: 0,
     library: 0,
     cafeteria: 0,
+    homeroom: 0,
   });
 
   const [hasVoted, setHasVoted] = useState(false);
@@ -33,6 +35,7 @@ export function useVotes() {
         counseling_room: 0,
         library: 0,
         cafeteria: 0,
+        homeroom: 0,
       };
 
       data?.forEach((vote) => {

@@ -41,6 +41,15 @@ const locations = [
     image: '/lovable-uploads/07388efb-3770-4315-866e-545bf1fa4ad7.png',
     color: 'cafeteria',
   },
+  {
+    id: 'homeroom',
+    name: '담임실',
+    teacher: '담임 선생님',
+    advice: '시험은 너의 노력이 빛나는 순간이야. 지금까지 열심히 한 너 자신을 믿고, 차근차근 해보자. 선생님이 항상 응원하고 있어!',
+    description: '따뜻한 격려와 응원',
+    image: '/src/assets/homeroom-teacher.jpg',
+    color: 'homeroom',
+  },
 ];
 
 export function StudentView() {
@@ -88,7 +97,7 @@ export function StudentView() {
         </div>
 
         {/* 카드 그리드 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
           {locations.map((location) => (
             <TeacherCard
               key={location.id}
