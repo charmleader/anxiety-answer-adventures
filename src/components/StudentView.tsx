@@ -119,7 +119,7 @@ export function StudentView() {
     <div className="max-w-2xl mx-auto">
       <div className="text-center mb-8">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-4 leading-tight">
-          선생님, 시험을 보는데<br />불안해요. 어떻게 해야할까요?
+          선생님,<br />시험을 보는데 불안해요.<br />어떻게 해야할까요?
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground mb-6">
           먼저 담임선생님께 물어보세요. 카드를 클릭해서 조언을 들어보세요!
@@ -163,7 +163,7 @@ export function StudentView() {
               size="lg"
               className="bg-gradient-primary text-white text-lg px-8 py-4 shadow-floating hover:shadow-card transition-all duration-300 mr-4"
             >
-              선생님 감사합니다. 위로가 되었어요.
+              선생님 감사합니다. 도움이 되었어요.
             </Button>
             <div className="mt-6">
               <p className="text-lg text-muted-foreground mb-4">
@@ -175,7 +175,7 @@ export function StudentView() {
                 size="lg"
                 className="text-lg px-8 py-4"
               >
-                4가지 추가 해결방안 보기
+                추가 해결 방안
               </Button>
             </div>
           </div>
@@ -240,11 +240,16 @@ export function StudentView() {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-background p-4">
+    <div className="min-h-screen bg-gradient-background p-4 relative">
       <div className="max-w-6xl mx-auto">
         {step === 'homeroom' && renderHomeroomStep()}
         {step === 'others' && renderOthersStep()}
         {step === 'voted' && renderVotedStep()}
+      </div>
+      
+      {/* 제작자 크레딧 */}
+      <div className="fixed bottom-4 right-4 text-sm text-muted-foreground bg-white/80 px-3 py-2 rounded-lg shadow-sm">
+        @charmleader 참리더
       </div>
     </div>
   );

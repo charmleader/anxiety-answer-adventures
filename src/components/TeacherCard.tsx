@@ -23,7 +23,7 @@ export function TeacherCard({ location, isFlipped, onFlip, voteCount }: TeacherC
         <img 
           src={location.image} 
           alt={location.teacher}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover scale-75"
         />
       </div>
       <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2">
@@ -55,7 +55,7 @@ export function TeacherCard({ location, isFlipped, onFlip, voteCount }: TeacherC
             <img 
               src={location.image} 
               alt={location.teacher}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover scale-75"
             />
           </div>
         </div>
