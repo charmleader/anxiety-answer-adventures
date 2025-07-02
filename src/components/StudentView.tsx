@@ -72,11 +72,13 @@ export function StudentView() {
   };
 
   const handleHomeroomSolved = () => {
+    console.log('handleHomeroomSolved called');
     vote('homeroom');
     setStep('voted');
   };
 
   const handleNeedMoreHelp = () => {
+    console.log('handleNeedMoreHelp called');
     setStep('others');
   };
 
