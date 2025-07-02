@@ -6,11 +6,19 @@ import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from 'recha
 
 const locations = [
   {
+    id: 'homeroom',
+    name: '교실',
+    teacher: '담임 선생님',
+    advice: '공부를 제대로 안하니까 불안한거야. 그시간에 공부를 하자! 정면돌파! 화이팅!',
+    image: '/lovable-uploads/d36a05a1-d0bc-490e-a102-02d187685aca.png',
+    color: 'homeroom',
+  },
+  {
     id: 'health_room',
     name: '보건실',
     teacher: '보건 선생님',
-    advice: '깊게 숨을 쉬고 몸의 긴장을 풀어보세요. 시험은 건강이 가장 중요해요.',
-    image: '/lovable-uploads/2fe0360c-80ca-4177-b2f8-2af64e08a28f.png',
+    advice: '심호흡을 크게 하고, 두 손으로 나를 토닥여 주자~ 다독다독~ 누구보다 네가 스스로를 응원해 준다면, 너의 뇌는 너의 불안을 희망으로 변화 시킬거고, 결국 너는 해 낼 수 있을거야!',
+    image: '/lovable-uploads/818b62b1-0a53-4d0f-be83-2fae413e0b96.png',
     color: 'health-room',
   },
   {
@@ -18,15 +26,15 @@ const locations = [
     name: '상담실',
     teacher: '상담 선생님',
     advice: '시험보기전에 마음이 두근거리거나 나는 또 못할거야, 스탑! 신호를 만들자. 예를 들어 마음속으로 "멈춰!"라고 말하는거야. 그리고 나는 준비한 만큼 해볼거야.',
-    image: '/lovable-uploads/f654e1fe-1cc7-4541-8d17-cf4299d39fc0.png',
+    image: '/lovable-uploads/61012407-a7fd-4fcf-9484-a604ecf32fc3.png',
     color: 'counseling-room',
   },
   {
     id: 'library',
-    name: '교실',
-    teacher: '담임 선생님',
-    advice: '공부를 제대로 안하니까 불안한거야. 그시간에 공부를 하자! 정면돌파!',
-    image: '/lovable-uploads/190579a4-33ad-40e6-93ca-511720b44c60.png',
+    name: '도서실',
+    teacher: '사서 선생님',
+    advice: '그러면 효율적으로 공부하기 위해 공부 방법을 알아볼까요?',
+    image: '/lovable-uploads/aca47cf7-d727-4b94-ac2c-2f42625181c5.png',
     color: 'library',
   },
   {
@@ -34,7 +42,7 @@ const locations = [
     name: '급식실',
     teacher: '영양 선생님',
     advice: '바나나 한 입, 아몬드 5개! 시험 전 불안감을 없앨 수 있는 마법 간식이야. 먹으면 마음이 차분해지고 머리가 반짝해질거야!',
-    image: '/lovable-uploads/07388efb-3770-4315-866e-545bf1fa4ad7.png',
+    image: '/lovable-uploads/480377ae-6190-43e2-a11b-45ec2d015585.png',
     color: 'cafeteria',
   },
 ];
@@ -169,6 +177,11 @@ export function TeacherView() {
             </Card>
           </div>
         )}
+      </div>
+      
+      {/* Creator credit */}
+      <div className="fixed bottom-4 right-8 text-sm text-muted-foreground/70 z-10">
+        제작자: 참리더
       </div>
     </div>
   );
