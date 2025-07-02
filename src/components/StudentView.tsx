@@ -12,11 +12,11 @@ import nutritionTeachersImage from '@/assets/nutrition-teachers.jpg';
 
 const homeroomTeacher = {
   id: 'homeroom',
-  name: '담임실',
+  name: '교실',
   teacher: '담임 선생님',
-  advice: '시험은 너의 노력이 빛나는 순간이야. 지금까지 열심히 한 너 자신을 믿고, 차근차근 해보자. 선생님이 항상 응원하고 있어!',
+  advice: '공부를 제대로 안하니까 불안한거야. 그시간에 공부를 하자! 정면돌파!',
   description: '따뜻한 격려와 응원',
-  image: homeroomTeacherImage,
+  image: '/lovable-uploads/d36a05a1-d0bc-490e-a102-02d187685aca.png',
   color: 'homeroom',
 };
 
@@ -27,7 +27,7 @@ const otherTeachers = [
     teacher: '보건 선생님',
     advice: '시험에 대한 불안은 누구에게나 있을 수 있어. 심호흡을 크게 하고, 두 손으로 나를 토닥여 주자~ 다독다독~ 누구보다 네가 스스로를 응원해 준다면, 너의 뇌는 너의 불안을 희망으로 변화 시킬거고, 결국 너는 해 낼 수 있을거야!',
     description: '몸과 마음을 편안하게',
-    image: healthTeachersImage,
+    image: '/lovable-uploads/818b62b1-0a53-4d0f-be83-2fae413e0b96.png',
     color: 'health-room',
   },
   {
@@ -36,7 +36,7 @@ const otherTeachers = [
     teacher: '상담 선생님',
     advice: '시험보기전에 마음이 두근거리거나 나는 또 못할거야, 스탑! 신호를 만들자. 예를 들어 마음속으로 "멈춰!"라고 말하는거야. 그리고 나는 준비한 만큼 해볼거야.',
     description: '마음의 부담을 덜어내기',
-    image: counselingTeachersImage,
+    image: '/lovable-uploads/61012407-a7fd-4fcf-9484-a604ecf32fc3.png',
     color: 'counseling-room',
   },
   {
@@ -45,7 +45,7 @@ const otherTeachers = [
     teacher: '사서 선생님',
     advice: '그러면 효율적으로 공부하기 위해 공부 방법을 알아볼까요?',
     description: '체계적으로 정리하기',
-    image: libraryTeachersImage,
+    image: '/lovable-uploads/aca47cf7-d727-4b94-ac2c-2f42625181c5.png',
     color: 'library',
   },
   {
@@ -54,7 +54,7 @@ const otherTeachers = [
     teacher: '영양 선생님',
     advice: '바나나 한 입, 아몬드 5개! 시험 전 불안감을 없앨 수 있는 마법 간식이야. 먹으면 마음이 차분해지고 머리가 반짝해질거야!',
     description: '몸의 에너지 충전하기',
-    image: nutritionTeachersImage,
+    image: '/lovable-uploads/480377ae-6190-43e2-a11b-45ec2d015585.png',
     color: 'cafeteria',
   },
 ];
@@ -163,14 +163,19 @@ export function StudentView() {
             >
               선생님 감사합니다. 위로가 되었어요.
             </Button>
-            <Button
-              onClick={handleNeedMoreHelp}
-              variant="outline"
-              size="lg"
-              className="text-lg px-8 py-4"
-            >
-              다른 선생님께도 상담받고 싶어요
-            </Button>
+            <div className="mt-6">
+              <p className="text-lg text-muted-foreground mb-4">
+                또다른 해결방법이 궁금한가요?
+              </p>
+              <Button
+                onClick={handleNeedMoreHelp}
+                variant="outline"
+                size="lg"
+                className="text-lg px-8 py-4"
+              >
+                4가지 추가 해결방안 보기
+              </Button>
+            </div>
           </div>
         </div>
       )}
