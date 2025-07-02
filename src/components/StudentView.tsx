@@ -154,7 +154,7 @@ export function StudentView() {
             </Button>
             <audio
               ref={audioRef}
-              src="/담임.m4a"
+              src="/teacher2.MP3"
               onEnded={() => setIsPlaying(false)}
               onPlay={() => setIsPlaying(true)}
               onPause={() => setIsPlaying(false)}
