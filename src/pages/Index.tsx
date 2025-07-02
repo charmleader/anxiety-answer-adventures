@@ -32,7 +32,7 @@ const Index = () => {
               학생용
             </h2>
             <p className="text-muted-foreground mb-6">
-              카드를 뒤집어서 선생님들의 조언을 들어보고 가장 도움이 될 것 같은 조언을 선택해주세요.
+              카드를 클릭해서 각각의 선생님의 조언도 들어보세요.
             </p>
             <Button 
               size="lg" 
@@ -68,7 +68,7 @@ const Index = () => {
 
         <div className="text-center mt-12">
           <p className="text-sm text-muted-foreground">
-            시험 스트레스 관리를 위한 교육용 게임입니다
+            긴장도 관리를 위한 교육용 게임입니다
           </p>
         </div>
       </div>
