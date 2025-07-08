@@ -45,7 +45,7 @@ const otherTeachers = [
     id: 'library',
     name: '도서실',
     teacher: '사서 선생님',
-    advice: '그러면 효율적으로 공부하기 위해 공부 방법을 알아볼까요?',
+    advice: '그러면 공부 방법을 바꿔보면 어떨까요? 효율적인 공부를 위해 나에게 맞는 공부법을 찾아봅시다.',
     description: '체계적으로 정리하기',
     image: '/lovable-uploads/aca47cf7-d727-4b94-ac2c-2f42625181c5.png',
     color: 'library',
