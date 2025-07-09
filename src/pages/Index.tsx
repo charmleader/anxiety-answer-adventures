@@ -75,7 +75,7 @@ const Index = () => {
       
       {/* Creator credit */}
       <div className="fixed bottom-4 right-8 text-sm text-muted-foreground/70 z-10">
-        제작자: 참리더
+        제작자: 참리더 & 이승연
       </div>
     </div>
   );
